@@ -1,0 +1,110 @@
+---
+layout: interna
+title: Tipos de dados
+---
+{% include submenu-python.html %}
+
+<article class="content">
+	<h1>Tipos de dados</h1>
+	<br>
+
+	<p>
+		Tudo em python é objeto, e sua filosofia vai além de outras linguagens de programação OO, todos os valores de dados no Python são encapsulados em classes de objetos, e tudo em um programa python é um objeto acessível a partir do programa.
+
+		Em C, por exemplo, para se armazenar um número inteiro deverá ter um código como o abaixo.		
+	</p>
+
+<pre class="lang-c prettyprint linenums">
+int var;
+var = 19;
+</pre>
+
+	<p>
+		Com o código escrito em python, simplesmente se tem		
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+var = 19
+</pre>
+	
+	<p>
+		Por trás,  o python cria um objeto integer e designa a variável para fazer referência para o novo objeto, e a mágica é, por ser uma linguagem de tipagem dinâmica, é possível atribuir valores de outros tipos na mesma variável no mesmo módulo que python irá alterar o objeto para o tipo necessário sem necessidade de interferência do programador.
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/type-var-python.png" alt="">
+	</p>
+	
+	<h1>Operadores aritméticos</h1>
+	<br>
+
+	<p align="center">
+		<img src="/assets/img/operadores.png" alt="">
+	</p>
+
+	<h1>Operações bit-a-bit</h1>
+	<br>
+
+	<p align="center">
+		<img src="/assets/img/bit-a-bit.png" alt="">
+	</p>
+
+	<h1>Tipos de dados de alto nível</h1>
+	<br>
+
+	<p>
+		Não é possível aprender programar em python sem conhecer seus tipos de dados de alto nível, neste post será apresentado três deles.		
+	</p>
+
+	<h2>Listas</h2>
+	<br>
+
+	<p>
+		Listas são como vetores em outras linguagens, são um conjunto, sequencia de valores mutáveis que podem ser acessados e indexados por um índice numérico inteiro começando de zero. Uma lista em python não necessariamente armazena somente um tipo de dado, uma lista pode armazenar dezenas de outras listas e dentro dessas podem haver dados do tipo string ou inteiros ou qualquer outro tipo de dados da linguagem.
+		<br>
+		Abaixo utilizando o interpretador python é mostrado um simples exemplo de manipulação de lista.
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/list-python.png" alt="">
+	</p>
+
+	<p>
+		Para exibir todos os métodos de manipulação de listas existentes, utilize o `IPython` escrevendo o nome da variável mais . e pressione tab, com isso o IPython irá exibir os métodos existentes.		
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/list1-python.png" alt="">	
+	</p>
+	
+	<h2>Tuplas</h2>
+	<br>
+
+	<p>
+		São também uma sequencia de valores que podem ser indexados através de um índice numérico inteiro começando em 0, as tuplas se compartam de forma muito semelhante as listas, tendo um importante diferença, são imutáveis, ou seja, uma vez criadas os dados não poderão ser alterados.		
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/tuple-python.png" alt="">		
+	</p>
+
+	<p>
+		Para exibir todos os métodos de manipulação de tuplas existentes, utilize o `IPython` escrevendo o nome da variável mais . e pressione tab, com isso o IPython irá exibir os métodos existentes.		
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/tuple1-python.png" alt="">	
+	</p>
+
+	<h2>Dicinários</h2>
+	<br>
+
+	<p>
+		São sequencias que podem utilizar índices para indexação de tipos variáveis, desde que o índice seja uma variável imutável como {números, tuplas, strings ...}. Os dicionários em python são semelhantes há estruturas de hash de outras linguagens pois trabalham no conceito de chave valor.		
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/dic-python.png" alt="">	
+	</p>
+
+</article>
