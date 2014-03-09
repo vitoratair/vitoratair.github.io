@@ -1,117 +1,96 @@
-# HPSTR Jekyll Theme
+Iniciantes
+==========
+Em uma conversa no Twitter, algumas pessoas identificaram que faltava conteúdo para iniciantes. Resolvemos então criar um conteúdo básico, mínimo, para que alguém que esteja iniciando na área tenha alguma bagagem para aprender informações importantes de forma que ela saiba por onde começar.
 
-They say three times the charm, so here is another free responsive Jekyll theme for you. I've learned a ton since open sourcing my first two themes [on Github](http://github.com/mmistakes), and wanted to try a few new things this time around. If you've used my previous themes most of this should be familiar territory...
+----------
 
-## What HPSTR brings to the table:
+Guia básico para iniciantes
+----------
+Se você quiser ajudar a melhorar este guia, escrevendo, corrigindo ou aprimorando a experiência de utilização, por favor, faça um FORK do projeto e mãos à obra.
 
-* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
-* Gracefully degrades in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
-* Modern and minimal design.
-* Sweet animated menu.
-* Readable typography to make your words shine.
-* Support for large images to call out your favorite posts.
-* Comments powered by [Disqus](http://disqus.com) if you choose to enable.
-* Social Sharing links for Facebook, Twitter, and Google+ if you choose to enable.
-* Simple and clear permalink structure.
-* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
-* Simple [custom 404 page](http://mmistakes.github.io/hpstr-jekyll-theme/404.html) to get you started.
-* Stylesheets for Pygments and Coderay [syntax highlighting](http://mmistakes.github.io/hpstr-jekyll-theme/code-highlighting-post/) to make your code examples look snazzy
-* [Grunt](http://gruntjs.com) build script for easy theme development
-* [Available in Spanish](https://github.com/cruznick/hpstr-jekyll-theme/tree/es). Thanks [@cruznick](https://github.com/cruznick)!
+Como funciona
+----------
+Utilizamos [Jekyll](http://jekyllrb.com) uma Gem do [Ruby](http://www.ruby-lang.org/) para gerar páginas estáticas.
 
-![HPSTR Theme Preview screenshot](http://mmistakes.github.io/hpstr-jekyll-theme/images/hpstr-jekyll-theme-preview.jpg)
+1. Instale o [Ruby](http://www.ruby-lang.org/pt/downloads/)
 
----
+2. Instale a Gem do [Bundler](http://bundler.io/):
+    ```
+    gem install bundler
+    ```
+3. Clone o projeto:
+    ```
+    git@github.com:tableless/iniciantes.git
+    ```
+4. Vá a pasta do projeto:
+    ```
+    cd iniciantes
+    ```
+5. Instale as dependências através do [Bundler](http://bundler.io/):
+    ```
+    bundle install
+    ```
+5. Inicie o [Jekyll](http://jekyllrb.com/):
+    ```
+    jekyll serve -w
+    ```
+5. Acesse [http://localhost:4000/iniciantes/](http://localhost:4000/iniciantes/)
 
-General notes and suggestions for customizing **HPSTR**.
+Escrevendo código com syntax highlight
+----------
+Para escrever código, usamos o Google Prettify, que já é conhecido de todos. Uma estrutura para código básica segue abaixo:
 
-## Basic Setup for a new Jekyll site
+	<pre class="lang-html prettyprint linenums">
+        &lt;!DOCTYPE html&gt;
+	    &lt;html lang=&quot;pt-br&quot;&gt;
+	      &lt;head&gt;
+	        &lt;title&gt;&lt;/title&gt;
+	        &lt;meta charset=&quot;utf-8&quot;&gt;
+	      &lt;/head&gt;
+	      &lt;body&gt;
 
-1. [Install Bundler](http://bundler.io) `gem install bundler` and then install [Jekyll](http://jekyllrb.com) and all dependencies `bundle install`.
-2. Fork the [HPSTR Jekyll Theme repo](https://github.com/mmistakes/hpstr-jekyll-theme/fork).
-3. Clone the repo you just forked and rename it.
-4. Edit `_config.yml` to personalize your site.
-5. Check out the sample posts in `_posts` to see examples for pulling in large feature images, assigning categories and tags, and other YAML data.
-6. Read the documentation below for further customization pointers and documentation.
+	      &lt;/body&gt;
+	    &lt;/html&gt;
+	</pre>
 
-[Demo the Theme](http://mmistakes.github.io/hpstr-jekyll-theme)
+A classe `lang-x` define a linguagem do código, onde `x` é a linguagem (javascript, css, php, asp, ruby e assim por diante). Lembre-se de escapar sinais como &lt; &gt; colocando em entidades HTML (&amp;lt; &amp;gt;).
 
-**Pro-tip:** Delete the `gh-pages` branch after cloning and start fresh by branching off `master`. There is a bunch of garbage in `gh-pages` used for the theme's demo site that I'm guessing you don't want on your site.
+Estrutura básica de diretórios
+----------
+Dentro de **manual** você encontra todos os textos do guia. Lá está separado em 4 pastas básicas: **obasico** onde agrupa textos sobre o conceito da área. A pasta **HTML** contém textos sobre HTML e seu funcionamento. A pasta **CSS** tem textos sobre CSS. E por último mas não menos importante, a pasta **JS** guarda textos sobre JavaScript e afins.
 
----
+A pasta **assets** guarda o CSS, o JS e as imagens usadas no projeto.
 
-## Setup for an Existing Jekyll site
 
-1. Clone the following folders: `_includes`, `_layouts`, `assets`, and `images`.
-2. Clone the following files and personalize content as need: `about.md`, `archive.html`, `index.html`, `tags.html`, and `feed.xml`.
-3. Set the following variables in your `config.yml` file:
-
-``` yaml
-title:            Site Title
-description:      Describe your website here.
-disqus_shortname: shortname
-# Your site's domain goes here. When working locally use localhost server leave blank
-# PS. If you set this wrong stylesheets and scripts won't load and most links will break.
-# PPS. If you leave it blank for local testing home links won't work, they'll be fine for live domains though.
-url:              http://localhost:4000
-
-# Owner/author information
-owner:
-  name:           Your Name
-  avatar:         avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          you@email.com
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:    
-
-# Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
-
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Theme Setup
-    url: /theme-setup
-  - title: External Link
-    url: http://mademistakes.com
-    external: true
-
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-future:      true
-pygments:    true
-markdown:    kramdown
-
-# Amount of posts to show on home page
-paginate: 5
+```
+| iniciantes/
+|
+|-- _includes/
+|
+|-- _layouts/
+|
+|-- assets/
+|   |-- imgs
+|   |-- javascripts
+|   |-- stylesheet
+|
+|-- manual/
+|   |-- css
+|   |-- html
+|   |-- js
+|   |-- obasico
+|
+|-- slide/
+|   |-- css
+|   	|-- fonts
+|   	|-- galery-sass
+|   	|-- galery
+|   |-- img
+|   |-- js
+|   |-- layout
 ```
 
----
 
-## More Theme Setup Goodness
-
-To learn more about how to customize the theme, include feature images in posts, use the Grunt build script, and some other junk, [read up here](http://mmistakes.github.io/hpstr-jekyll-theme/theme-setup/).
-
----
-
-## Questions?
-
-Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter [@mmistakes](http://twitter.com/mmistakes) or [file a GitHub Issue](https://github.com/mmistakes/hpstr-jekyll-theme/issues/new). And if you make something cool with this theme feel free to let me know.
-
----
-
-## License
-
-This theme is free and open source software, distributed under the [GNU General Public License](https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/LICENSE) version 2 or later. So feel free to to modify this theme to suit your needs. 
+Da comunidade para a comunidade
+----------
+Esta iniciativa é da comunidade para a comunidade. Prezamos pelo bom conteúdo e sabemos que encontrar conteúdo básico é muito difícil, por isso tente divulgar o máximo que puder para aqueles que estão começando. Dessa forma temos a certeza de que a qualidade da internet brasileira vai crescer ainda mais.

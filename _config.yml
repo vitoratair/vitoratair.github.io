@@ -1,66 +1,65 @@
-title:            Vitor Atair
-description:      Blog de desenvolvimento
-disqus_shortname: 
-#Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              https://vitoratair.github.io
-url:              http://127.0.0.1:4000
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+include:     ['.htaccess']
+exclude:     []
+keep_files:  ['.git','.svn']
+timezone:    nil
 
-# Owner/author information
-owner:
-  name:           Vitor Atair
-  avatar:         avatar.jpg
-  bio:            "Texto falando sobre mim"
-  email:          vitor.ruts@gmail.com
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:   
-
-# Background image to be tiled on all pages
-background: 
-
-# Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
-
-# Links to include in top navigation
-# For external links add external: true
-
-
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/Sao_Paulo 
 future:      true
+show_drafts: nil
+limit_posts: 0
 pygments:    true
-markdown:    kramdown
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
+relative_permalinks: true
 
-# Amount of post to show on home page
-paginate: 5
+permalink:     date
+paginate_path: 'page:num'
+
+markdown:      maruku
+markdown_ext:  markdown,mkd,mkdn,md
+textile_ext:   textile
+
+excerpt_separator: "\n\n"
+
+safe:        true
+#watch:       false    # deprecated
+#server:      false    # deprecated
+host:        0.0.0.0
+port:        4000
+url:         http://localhost:4000
+lsi:         false
+pygments:    true
+
+maruku:
+  use_tex:    false
+  use_divs:   false
+  png_engine: blahtex
+  png_dir:    images/latex
+  png_url:    /images/latex
+
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
 
 kramdown:
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: true
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: false
 
   coderay:
-    coderay_line_numbers: nil
+    coderay_wrap: div
+    coderay_line_numbers: inline
     coderay_line_numbers_start: 1
     coderay_tab_width: 4
     coderay_bold_every: 10
-    coderay_css: class
+    coderay_css: style
 
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+redcloth:
+  hard_breaks: true
