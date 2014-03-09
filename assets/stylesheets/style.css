@@ -11,7 +11,7 @@ body {
   background-color: rgb(237, 237, 237);
   
 }
-.limit {max-width: 1050px; margin: 0 auto;}
+.limit {max-width: 900px; margin: 0 auto;}
 
 h1, h2, h3, h4, h5 {
   color:#555; 
@@ -201,7 +201,7 @@ article img {max-width: 100%;}
   background: yellow;
   content: "HTML";
   display: block;
-  padding: 40px 0;
+  padding: 25px 0;
   font-weight: 300;
   font-size: 3em;
   color: #FFF;
@@ -214,6 +214,16 @@ article img {max-width: 100%;}
 
 .box.linux-box:before {
   content: "Linux";
+  background-color: rgb(114, 192, 44);
+}
+
+.box.php-box:before {
+  content: "PHP";
+  background-color: rgb(114, 192, 44);
+}
+
+.box.codeigniter-box:before {
+  content: "CodeIgniter";
   background-color: rgb(114, 192, 44);
 }
 
