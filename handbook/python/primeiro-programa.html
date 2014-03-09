@@ -1,0 +1,136 @@
+---
+layout: interna
+title: Python o começo de tudo
+---
+{% include submenu-python.html %}
+
+<article class="content">
+	<h1>Primeiro programa</h1>
+	<br>
+	<p>
+		Python é uma linguagem multiplataforma nativa em Linux/Unix, e facilmente instalada em <a href="http://www.python.org/download/windows/">Windows</a>. Não é necessário uma <b>IDE</b> para desenvolvimento, um bom editor de textos com sublime-text em conjunto com alguns <a href="https://sublime.wbond.net/packages/Python%20PEP8%20Autoformat">plugins</a> são suficientes para desenvolver bons softwares. Para fins de teste, o uso do próprio interpretador, sem a utilização de um editor de textos é indispensável, para usuários OSX existe o aplicativos chamado <b>IPython</b> como interpretador interativo do python. Abaixo links para conhecimento.
+
+		<ul>
+			<li><a href="http://www.sublimetext.com/3">Sublime-text</a></li>
+			<li><a href="http://ipython.org/">Ipython</a></li>
+			<li><a href="http://legacy.python.org/dev/peps/pep-0008/">Style Guide for Python Code - pep8</a></li>
+		</ul>
+	</p>
+
+	<p>
+		Abrindo o terminal da máquina e digitando nele <b>python</b> será aberto o interpretador interativo do python, abaixo um exemplo.
+	</p>
+	
+	<p>	
+		<img src="/assets/img/terminal_python.png" alt="">
+	</p>
+	
+	<p>
+		Com isso, tudo que for digitado após o  <b> >>> </b> será interpretado pelo <b>python</b> e não mais pelo SO.		
+	</p>
+
+	<hr>
+
+	<h1>Primeiro programa</h1>
+	<br>
+
+	<p>
+		O programa abaixo foi retirado do site <a href="http://coffeeghost.net/pybat">coffeeghost.net</a> e modificado para explicação de alguns conceitos importantes da linguagem, salve em um arquivo com o nome <b>meu_primeiro_programa.py</b>		
+	</p>
+
+	
+	<pre class="prettyprint linenums">
+import os
+
+
+def main():
+
+    print "Hello World"
+    print "Hello World's"
+    print 'Hello World\'s'
+
+    functionTest(1, 25)
+
+    print '=' * 10
+    text = 'Diretório corrente é '
+    print text + os.getcwd()
+
+    counter = 0
+    counter += 1
+
+    foods = ['apple', 'orange', 'rice']
+
+    for food in foods:
+        print 'I like to eat ' + food
+
+    print "Count to ten"
+
+    for i in range(1, 11):
+        print i
+
+
+def functionTest(param1, param2):
+
+    res = param1 + param2
+
+    print "%s + %s = %s" % (param1, param2, res)
+
+    if res < 50:
+        print "Menor que 50"
+
+    elif (res <= 50) and ((param1 == 42) or (param2 == 25)):
+        print "Menor ou igual a 50 e param1 = 42 ou param2 a 25"
+
+    else:
+        print "Maior que 50"
+
+        return res
+        """
+	Comentário de multiplas linhas
+	"""
+
+if __name__ == '__main__':
+    main()
+	</pre>
+
+
+
+	<h1>Explorando o código</h1>
+	<br>
+
+	<p>
+		Salvando esse código em um arquivo chamado <b>meu_primeiro_programa.py</b> ele se torna um <b>módulo python</b>, módulos python são arquivos textos contendo código fonte python. Esse arquivo texto será processado pelo interpretador python, que irá parsear o código de cima para baixo da esquerda para direita. O python nem sempre trabalha com textos, ele sempre começa de um arquivo texto e cria um bytecode, esses bytecodes são cacheados em arquivos <b>.pyc</b> tendo uma melhor performance em uma próxima execução.		
+	</p>
+
+	<p>
+		Na primeira linha do arquivo <b>meu_primeiro_programa.py</b> o interpretador do python encontra o comando <b>import os</b>, isso faz com que o python procure um módulo chamado <b>os.py</b> no diretório <b>site_packages</b>, leia o arquivo, processe de cima para baixo da esquerda para direita, gere o python cache <b>.pyc</b>, instancie um <b>objeto módulo</b> que se referencie aos objetos do módulo <b>os</b>. Na prática, dentro do programa <b>meu_primeiro_programa.py</b> será possível acessar as funções que estão escritas no módulo <b>os</b>, como podemos ver na linha 14, executamos a função <b>os.getcwd()</b> com isso estamos acessando uma instância de <b>os.py</b> chamada de <b>os</b>, e o <b>.getcwd()</b> se refere a uma função que não recebe parâmetros escrita no módulo <b>os.py</b>.		
+	</p>
+
+	<p>
+		Python possui como demais linguagens de programação, palavras reservadas, <b>def</b> é uma delas e é utilizada para definição de função. Na linha 4 estamos definindo uma função que terá o nome de <b>main</b>. Python não possui <b>entry point</b> fixo, isso quer dizer que o nome main não é necessário, poderia ser carro ou bicicleta e funcionaria sem problemas. Após o nome <b>main</b> é utilizado o <b>()</b> que deixa explicito que main é uma função que não recebe argumentos, por último o caracter <b>:</b>, após o caracter <b>:</b> esperasse uma mudança na indentação, isso é necessário para definir o bloco de código que faz parte da função main.	
+	</p>
+
+	<p>
+		Python diferencia um programa de uma biblioteca com as linha 50 e 51, todo <b>entry point</b> em python é o próprio nome do módulo, só que o python sobrescreve no atributo do módulo chamado <b>__name__</b> a string <b>__main__</b> com isso utilizando o <b>if</b> é possível utilizar o mesmo código como biblioteca e programa.	
+	</p>
+
+	<p>
+		As linhas 6, 7 e 8 demostram que python aceita <b>"</b> e  <b>'</b> para delimitar uma string, sendo necessário apenas abrir e fechar com o mesmo tipo.
+	</p>
+
+	<p>	
+		Na linha 30 temos novamente a palavra reservada <b>def</b> seguida de <b>functionTest(param1, param2):</b> com isso é definido uma função chamada <b>functionTest</b> que irá receber dois parâmetros para seu funcionamento. A linha 10 chama a função passando os dois parâmetros separados por <b>,</b> quando python encontra o comando <b>functionTest(1, 25):</b> ele irá pular para linha 30 executar todo código do bloco da função e retornar para a linha 11.
+	</p>
+
+	<p>
+		Por ser uma linguagem fortemente tipada, não é possível realizar operações matemáticas sem ocorrer erros entre tipos diferentes de dados, porém, python nos dá um funcionalidade bastante interessante, que é a multiplicação de string, a linha 12 por exemplo irá imprimir <b>==========</b>
+		Na linha 14 temos a função <b>getcwd</b> que retorna o diretório atual, é utilizado <b>os.getcwd()</b> pois essa função esta presente no módulo <b>os</b>.
+	</p>
+
+
+
+
+
+
+
+</article>
