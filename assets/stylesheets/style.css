@@ -174,7 +174,7 @@ article img {max-width: 100%;}
   text-transform: uppercase;
 }
 
-.box.concept-box:before {
+/*.box.concept-box:before {
   content: "O Básico";
   background-color: #7f8c8d;
 }
@@ -192,6 +192,16 @@ article img {max-width: 100%;}
   content: "JS";
   background-color: #F6D54A;
   color: #323330;
+}*/
+
+.box.python-box:before {
+  content: "Python";
+  background-color: #27ae60;
+}
+
+.box.linux-box:before {
+  content: "Linux";
+  background-color: #EF4523;
 }
 
 .box h1 {
