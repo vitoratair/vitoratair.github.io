@@ -222,8 +222,8 @@ article img {max-width: 100%;}
   background-color: rgb(114, 192, 44);
 }
 
-.box.codeigniter-box:before {
-  content: "CodeIgniter";
+.box.c-box:before {
+  content: "C";
   background-color: rgb(114, 192, 44);
 }
 
