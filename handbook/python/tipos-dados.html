@@ -62,49 +62,274 @@ var = 19
 	<p>
 		Listas são como vetores em outras linguagens, são um conjunto, sequencia de valores mutáveis que podem ser acessados e indexados por um índice numérico inteiro começando de zero. Uma lista em python não necessariamente armazena somente um tipo de dado, uma lista pode armazenar dezenas de outras listas e dentro dessas podem haver dados do tipo string ou inteiros ou qualquer outro tipo de dados da linguagem.
 		<br>
-		Abaixo utilizando o interpretador python é mostrado um simples exemplo de manipulação de lista.
+		Abaixo utilizando o interpretador python é mostrado alguns simples exemplos para manipulação de lista.
 	</p>
 
-	<p align="center">
-		<img src="/assets/img/list-python.png" alt="">
+	<pre class="lang-python prettyprint linenums">
+# Criando uma lista vazia
+>>> lista = []
+>>> lista
+[]
+# Criando uma lista com 3 strings e um inteiro
+>>> lista = ['element1', 'element2', 'element3', 5]
+>>> lista
+['element1', 'element2', 'element3', 5]
+>>> lista[0:2]
+['element1', 'element2']
+</pre>
+	
+	<h4>Métodos para manipulação de listas</h4>
+	<br>
+		
+	<p>
+		<h4><u>append</u></h4>
 	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Insere um elemento no final da lista, seu protótipo é <b>append('elemento a ser inserido')</b>
+	</p>
+	
+	<pre class="lang-python prettyprint linenums">
+>>> lista = ['element1', 'element2']
+>>> lista.append('element3')
+>>> lista
+['element1', 'element1', 'element3']
+</pre>	
 
 	<p>
-		Para exibir todos os métodos de manipulação de listas existentes, utilize o `IPython` escrevendo o nome da variável mais . e pressione tab, com isso o IPython irá exibir os métodos existentes.		
+		<h4><u>count</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna a quantidade do elemento passado por parâmetro presente na lista, seu protótipo é <b>count('elemento a ser procurado')</b>
 	</p>
 
-	<p align="center">
-		<img src="/assets/img/list1-python.png" alt="">	
+<pre class="lang-python prettyprint linenums">
+>>> lista = ['element', 'element', 'element1', 'element2']
+>>> lista.count('element')
+2
+</pre>
+
+	<p>
+		<h4><u>extend</u></h4>
 	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Insere os elementos de uma lista no final de uma segunda lista, seu protótipo é <b>extend(lista)</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> lista1 = ['lista1 - Element-1', 'lista1 - Element-2', 'lista1 - Element-3']
+>>> lista2 = ['lista2 - Element-1', 'lista2 - Element-2']
+>>> lista1.extend(lista2)
+>>> lista1
+['lista1 - Element-1', 'lista1 - Element-2', 'lista1 - Element-3', 'lista2 - Element-1', 'lista2 - Element-2']
+</pre>
+
+	<p>
+		<h4><u>index</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna o índice de um elemento dentro de uma lista, seu protótipo é <b>index('elemento')</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> lista = ['lista1 - Element-1', 'lista1 - Element-2', 'lista1 - Element-3']
+>>> lista.index('lista1 - Element-2')
+1
+</pre>
+
+	<p>
+		<h4><u>insert</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Insere um elemento em uma posição desejada na lista, seu protótipo é <b>insert(posiçao, 'elemento')</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> lista = ['element1', 'element2']
+>>> lista.insert(1, 'ELEMENT3')
+>>> lista
+['element1', 'ELEMENT3', 'element2']
+</pre>
+
+	<p>
+		<h4><u>pop</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Deleta um elemento da lista se não especificado um índice, o último elemento é deletado, seu protótipo é <b>pop(indice)</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> lista = ['element1', 'element2', 'element3', 'element4']
+>>> lista.pop(1)
+'element2'
+>>> lista
+['element1', 'element3', 'element4']
+>>> lista.pop()
+'element4'
+>>> lista
+['element1', 'element3']
+</pre>
+
+	<p>
+		<h4><u>remove</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Deleta um elemento da lista, é necessário indicar qual elemento deverá ser removido, seu protótipo é <b>remove('elemento')</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> lista = ['element1', 'element2', 'element3', 'element4']
+>>> lista.remove('element2')
+>>> lista
+['element1', 'element3', 'element4']
+</pre>
+
+	<p>
+		<h4><u>reverse</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Inverte a ordem dos elementos na lista, seu protótipo é <b>reverse()</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> lista = ['element1', 'element3', 'element4']
+>>> lista.reverse()
+>>> lista
+['element4', 'element3', 'element1']
+</pre>
+
+	<p>
+		<h4><u>sort</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Ordena os elementos de uma lista, seu protótipo é <b>sort()</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> lista = ['element4', 'element3', 'element1']
+>>> lista.sort()
+>>> lista
+['element1', 'element3', 'element4']
+</pre>
 	
 	<h2>Tuplas</h2>
 	<br>
-
+	
 	<p>
 		São também uma sequencia de valores que podem ser indexados através de um índice numérico inteiro começando em 0, as tuplas se compartam de forma muito semelhante as listas, tendo um importante diferença, são imutáveis, ou seja, uma vez criadas os dados não poderão ser alterados.		
-	</p>
+	</p>	
 
-	<p align="center">
-		<img src="/assets/img/tuple-python.png" alt="">		
-	</p>
+	<pre class="lang-python prettyprint linenums">
+# Criando uma tupla vazia
+>>> tupla = ()
+# Criando uma tupla com elementos
+>>> tupla = ('element1', 'element2', 'element3', 5)
+>>> tupla
+('element1', 'element2', 'element3', 5)
+>>> tupla[0:2]
+('element1', 'element2')
+>>> tupla[1:3]
+('element2', 'element3')
+</pre>
 
-	<p>
-		Para exibir todos os métodos de manipulação de tuplas existentes, utilize o `IPython` escrevendo o nome da variável mais . e pressione tab, com isso o IPython irá exibir os métodos existentes.		
-	</p>
+	<h4>Métodos para manipulação de tuplas</h4>
 
-	<p align="center">
-		<img src="/assets/img/tuple1-python.png" alt="">	
-	</p>
+	<pre class="lang-python prettyprint linenums">
+# count -> Retorna a quantidade do elementos passado como parâmetro em uma tupla
+>>> tupla = ('element', 'element', 'element1', 'element2')
+>>> tupla.count('element')
+2
+
+# index -> Retorna o índice de um elemento dentro de uma tupla
+>>> tupla = ['element-1', 'element-2', 'element-3']
+>>> tupla.index('element-2')
+1
+</pre>
+
 
 	<h2>Dicinários</h2>
 	<br>
 
 	<p>
-		São sequencias que podem utilizar índices para indexação de tipos variáveis, desde que o índice seja uma variável imutável como {números, tuplas, strings ...}. Os dicionários em python são semelhantes há estruturas de hash de outras linguagens pois trabalham no conceito de chave valor.		
+		São sequencias que podem utilizar índices para indexação de tipos variáveis, desde que o índice seja uma variável imutável como uma string ou tupla e são implementados com o conceito de <b>Hash Tables</b>
+		<br>	
+		Abaixo alguns simples exemplos para demostrar como é a estrutura de um dicionário.
 	</p>
 
-	<p align="center">
-		<img src="/assets/img/dic-python.png" alt="">	
-	</p>
+	<pre class="lang-python prettyprint linenums">
+# Criando um dicionário vazio
+>>> dic = {}
+# Criando um dicionário somente com chaves
+>>> dic = {}.fromkeys(['nome','endereco'])
+>>> dic['nome'] = "Python"
+>>> dic['endereco'] = "PSF"
+>>> dic
+{'endereco': 'PSF', 'nome': 'Python'}
+>>> dic['nome']
+'Python'
+</pre>
+
+	<h4>Métodos para manipulação de dicionários</h4>
+
+	<pre class="lang-python prettyprint linenums">
+# clear -> Limpa todo conteúdo do dicionário
+>>> dic = {'nome': 'python'}
+>>> dic
+{'nome': 'python'}
+>>> dic.clear()
+>>> dic
+{}
+
+# copy -> Retorna um dicionário com o mesmo conteúdo.
+>>> dic = {'nome': 'python'}
+>>> dic1 = dic.copy()
+>>> dic1
+{'nome': 'python'}
+
+# fromkeys -> Retorna um dicionário com as mesmas chaves e com o conteúdo que é passado por parâmetro.
+>>> dic = {'nome': 'vitor', 'idade': 23}
+>>> dic1 = dic.fromkeys(dic, 'NOVO_VALOR')
+>>> dic
+{'nome': 'vitor', 'idade': 23}
+>>> dic1
+{'idade': 'NOVO_VALOR', 'nome': 'NOVO_VALOR'}
+
+# get -> Retorna o conteúdo da chave informado por parâmetro
+>>> dic = {'nome': 'vitor', 'idade': 23}
+>>> dic.get('nome')
+'vitor'
+
+# has_key ->
+# items ->
+# iteritems ->
+# iterkeys ->
+# itervalues ->
+# keys ->
+# pop ->
+# popitem ->
+# setdefault ->
+# update ->
+# values ->
+# viewitems ->
+# viewkeys ->
+# viewvalues ->
+</pre>
 
 </article>
