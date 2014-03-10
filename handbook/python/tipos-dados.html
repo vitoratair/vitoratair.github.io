@@ -31,9 +31,17 @@ var = 19
 		Por trás,  o python cria um objeto integer e designa a variável para fazer referência para o novo objeto, e a mágica é, por ser uma linguagem de tipagem dinâmica, é possível atribuir valores de outros tipos na mesma variável no mesmo módulo que python irá alterar o objeto para o tipo necessário sem necessidade de interferência do programador.
 	</p>
 
-	<p align="center">
-		<img src="/assets/img/type-var-python.png" alt="">
-	</p>
+<pre class="lang-python prettyprint linenums">
+>>> var = 10
+>>> type(var)
+int
+>>> var = 10.10
+>>> type(var)
+float
+>>> var = 'Dez'
+>>> type(var)
+str
+</pre>
 	
 	<h1>Operadores aritméticos</h1>
 	<br>
@@ -42,18 +50,11 @@ var = 19
 		<img src="/assets/img/operadores.png" alt="">
 	</p>
 
-	<h1>Operações bit-a-bit</h1>
-	<br>
-
-	<p align="center">
-		<img src="/assets/img/bit-a-bit.png" alt="">
-	</p>
-
 	<h1>Tipos de dados de alto nível</h1>
 	<br>
 
 	<p>
-		Não é possível aprender programar em python sem conhecer seus tipos de dados de alto nível, neste post será apresentado três deles.		
+		Não é possível aprender programar em python sem conhecer seus tipos de dados de alto nível, abaixo será apresentado três deles.		
 	</p>
 
 	<h2>Listas</h2>
@@ -305,48 +306,171 @@ var = 19
 
 	<h4>Métodos para manipulação de dicionários</h4>
 
-	<pre class="lang-python prettyprint linenums">
-# clear -> Limpa todo conteúdo do dicionário
+	<p>
+		<h4><u>clear</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Limpa todo conteúdo do dicionário, inclusive as chaves, seu protótipo é <b>clear()</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
 >>> dic = {'nome': 'python'}
 >>> dic
 {'nome': 'python'}
 >>> dic.clear()
 >>> dic
 {}
+</pre>
 
-# copy -> Retorna um dicionário com o mesmo conteúdo.
+	<p>
+		<h4><u>copy</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna um dicionário com o mesmo conteúdo, seu protótipo é <b>copy()</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
 >>> dic = {'nome': 'python'}
 >>> dic1 = dic.copy()
 >>> dic1
 {'nome': 'python'}
+</pre>
 
-# fromkeys -> Retorna um dicionário com as mesmas chaves e com o conteúdo que é passado por parâmetro.
+
+	<p>
+		<h4><u>fromkeys</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna um dicionário com as mesmas chaves e com o conteúdo que é passado por parâmetro,
+		seu protótipo é <b>fromkeys(dicionario, valor)</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
 >>> dic = {'nome': 'vitor', 'idade': 23}
 >>> dic1 = dic.fromkeys(dic, 'NOVO_VALOR')
 >>> dic
 {'nome': 'vitor', 'idade': 23}
 >>> dic1
 {'idade': 'NOVO_VALOR', 'nome': 'NOVO_VALOR'}
+</pre>
 
-# get -> Retorna o conteúdo da chave informado por parâmetro
+	<p>
+		<h4><u>get</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna o conteúdo da chave informada por parâmetro, seu protótipo é <b>get(chave)</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
 >>> dic = {'nome': 'vitor', 'idade': 23}
 >>> dic.get('nome')
 'vitor'
+</pre>
 
-# has_key ->
-# items ->
-# iteritems ->
-# iterkeys ->
-# itervalues ->
-# keys ->
-# pop ->
-# popitem ->
-# setdefault ->
-# update ->
-# values ->
-# viewitems ->
-# viewkeys ->
-# viewvalues ->
+	<p>
+		<h4><u>has_key</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna True ou False quando é procurado por uma chave no dicionário, seu protótipo é <b>has_key(chave)</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> dic = {'nome': 'vitor', 'idade': 23}
+>>> dic.has_key('nome')
+True
+>>> dic.has_key('nomes')
+False
+>>>
+</pre>
+
+	<p>
+		<h4><u>items</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna uma lista de tuplas com com todo o conteúdo do dicionário, chaves e valores, seu protótipo é <b>items()</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> dic = {'nome': 'vitor', 'idade': 23}
+>>> dic.items()
+[('idade', 23), ('nome', 'vitor')]
+>>>
+</pre>
+
+	<p>
+		<h4><u>keys</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna uma lista com todas as chaves do dicionário, seu protótipo é <b>keys()</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> dic = {'nome': 'vitor', 'idade': 23}
+>>> dic.keys()
+['idade', 'nome']
+</pre>
+
+	<p>
+		<h4><u>values</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna uma lista com todas os conteúdos de chaves do dicionário, seu protótipo é <b>values()</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> dic = {'nome': 'vitor', 'idade': 23}
+>>> dic.values()
+[23, 'vitor']
+</pre>
+
+	<p>
+		<h4><u>pop</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Retorna o conteúdo da chave, e exclui o par chave:valor do dicionário, seu protótipo é <b>pop(chave)</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> dic = {'nome': 'vitor', 'idade': 23}
+>>> dic.pop('idade')
+23
+>>> dic
+{'nome': 'vitor'}
+</pre>
+
+	<p>
+		<h4><u>popitem</u></h4>
+	</p>
+	
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		Busca uma chave aleatória no dicionário, retorna seu conteúdo e exclui o par chave:valor do dicionário, seu protótipo é <b>popitem()</b>
+	</p>
+
+<pre class="lang-python prettyprint linenums">
+>>> dic = {'nome': 'vitor', 'idade': 23, 'curso': 'computação'}
+>>> dic.popitem()
+('idade', 23)
+>>> dic
+{'curso': 'computação', 'nome': 'vitor'}
 </pre>
 
 </article>
