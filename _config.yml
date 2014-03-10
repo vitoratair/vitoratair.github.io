@@ -28,7 +28,8 @@ safe:        true
 #server:      false    # deprecated
 host:        0.0.0.0
 port:        4000
-url:         http://localhost:4000
+# url:         http://localhost:4000
+url:         http://vitoratair.github.io
 lsi:         false
 pygments:    true
 
