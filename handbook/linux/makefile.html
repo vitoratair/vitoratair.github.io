@@ -1,0 +1,73 @@
+---
+layout: interna
+title: Makefile
+---
+{% include submenu-linux.html %}
+
+<article class="content">
+
+	<h1 class="headline" align="center">Makefile</h1>
+	<br>
+
+	<p>
+		Makefile é um arquivo texto sem extensão contendo instruções para compilação de um programa ou biblioteca, o utilitário <b>make</b> interpreta esse arquivo tornando a compilação de um software grande, com vários arquivos fontes, bibliotecas e dependências de terceiros simples, rápida e eficiente.
+	</p>
+
+	<h2>Estrutura de um arquivo Makefile</h2>
+
+<pre class="lang-c prettyprint linenums">
+# Especifica o compilador
+CC = gcc
+
+# Nome do executável
+PROG = programa 
+
+# Arquivos necessários para o programa ser compilado
+OBJS = main.c
+ 
+all: $(PROG)
+
+# Compilação do programa, caso exista o arquivo main.c
+$(PROG): $(OBJS)
+      $(CC) -o $(PROG) $(OBJS)
+</pre>	
+	
+
+	<h2>Explorando o Makefile</h2>
+	<br>
+
+	<p>
+		Makefiles são construídos por variáveis, targets, dependências e comandos, é possível executar comandos do sistema operacional semelhante ao <b>bash script</b>. Para executar o Makefile acima, basta estar no mesmo diretório e digitar <b>make</b>
+	</p>
+
+	<h4>Targets</h4>
+	<br>
+
+	<p>
+		Targets são a base do Makefile, são formados por qualquer nome seguido de dois pontos, por padrão é utilizado um verbo ou o nome do programa ou arquivo que queira compilar. Ao executar o comando <b>make</b> sem nenhum target especificado por linha de comando, <b>make</b> por padrão irá executar o primeiro target do Makefile.
+	</p>
+
+	<h4>Dependências</h4>
+	<br>
+
+	<p>
+		Antes de executar qualquer <b>target</b> o utilitário <b>make</b> irá verificar se todas as dependências estão sendo satisfeitas, uma dependência pode ser um novo target ou mesmo um arquivo.
+		<br>
+		Como exemplo, antes de executar um target, o make pode certifica-se que as bibliotecas estejam compiladas e que os arquivos de código fonte estejam nos diretórios corretos, caso alguma dependência falhe, a compilação será abortada e uma mensagem de erro será exibida na tela.
+
+	</p>
+
+	<h4>Comandos</h4>
+	<br>
+
+	<p>
+		Após entrar no target correto e verificar todas as dependências, é hora de executar comandos do sistema. Esses comandos irão servir para compilar o software desejado, como mkdir, cp, mv, rm ou qualquer outro comando, depois o <b>gcc</b> ou outro compilador qualquer para finalizar a compilação de seu código.
+	</p>	
+
+	<h4>Conclussão</h4>
+	<br>
+	<p>
+		Makefiles não necessariamente servem para compilação, é possível automatizar qualquer tarefa utilizando o <b>make</b>, para conhecer mais sobre essa poderosa ferramenta, um material um pouco mais detalhado sobre ela está disponível no <a href="makefile2.html">link</a>
+	</p>
+
+</article>
