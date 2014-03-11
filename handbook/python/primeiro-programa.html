@@ -101,15 +101,15 @@ if __name__ == '__main__':
 	</p>
 
 	<p>
-		Na primeira linha do arquivo <b>meu_primeiro_programa.py</b> o interpretador do python encontra o comando <b>import os</b>, isso faz com que o python procure um módulo chamado <b>os.py</b> no diretório <b>site_packages</b>, leia o arquivo, processe de cima para baixo da esquerda para direita, gere o python cache <b>.pyc</b>, instancie um <b>objeto módulo</b> que se referencie aos objetos do módulo <b>os</b>. Na prática, dentro do programa <b>meu_primeiro_programa.py</b> será possível acessar as funções que estão escritas no módulo <b>os</b>, como podemos ver na linha 14, executamos a função <b>os.getcwd()</b> com isso estamos acessando uma instância de <b>os.py</b> chamada de <b>os</b>, e o <b>.getcwd()</b> se refere a uma função que não recebe parâmetros escrita no módulo <b>os.py</b>.		
+		Na primeira linha do arquivo, o interpretador do python encontra o comando <b>import os</b>, isso faz com que o python procure um módulo chamado <b>os.py</b> no diretório <b>site_packages</b>, leia o arquivo, processe de cima para baixo e da esquerda para direita, gere o python cache <b>.pyc</b> e instancie um <b>objeto módulo</b> que se referencie aos objetos do módulo <b>os</b>. Na prática o que acontece é que dentro do programa <b>meu_primeiro_programa.py</b> será possível acessar as funções que estão escritas no módulo <b>os</b> como é possível ver na linha 14, quando é executada a função <b>os.getcwd()</b>, com isso estamos acessando uma instância de <b>os.py</b> chamada de <b>os</b>, e o <b>.getcwd()</b> se refere a uma função que não recebe parâmetros escrita no módulo <b>os.py</b>.		
 	</p>
 
 	<p>
-		Python possui como demais linguagens de programação, palavras reservadas, <b>def</b> é uma delas e é utilizada para definição de função. Na linha 4 estamos definindo uma função que terá o nome de <b>main</b>. Python não possui <b>entry point</b> fixo, isso quer dizer que o nome main não é necessário, poderia ser carro ou bicicleta e funcionaria sem problemas. Após o nome <b>main</b> é utilizado o <b>()</b> que deixa explicito que main é uma função que não recebe argumentos, por último o caracter <b>:</b>, após o caracter <b>:</b> esperasse uma mudança na indentação, isso é necessário para definir o bloco de código que faz parte da função main.	
+		Python possui como demais linguagens de programação, palavras reservadas, <b>def</b> é uma delas e é utilizada para definição de função. Na linha 4 estamos definindo uma função que terá o nome de <b>main</b>. Python não possui <b>entry point</b> fixo, isso quer dizer que o nome main não é necessário, poderia ser carro ou bicicleta e funcionaria sem problemas. Após o nome <b>main</b> é utilizado o <b>()</b> que deixa explicito que main é uma função que não recebe argumentos e por último o caracter <b>:</b>, após o caracter <b>:</b> esperasse uma mudança na indentação, isso é necessário para definir o bloco de código que faz parte da função main.	
 	</p>
 
 	<p>
-		Python diferencia um programa de uma biblioteca com as linha 50 e 51, todo <b>entry point</b> em python é o próprio nome do módulo, só que o python sobrescreve no atributo do módulo chamado <b>__name__</b> a string <b>__main__</b> com isso utilizando o <b>if</b> é possível utilizar o mesmo código como biblioteca e programa.	
+		Python diferencia um programa de uma biblioteca com as linha 50 e 51, todo <b>entry point</b> em python é o próprio nome do módulo, só que o python escreve no atributo do módulo chamado <b>__name__</b> a string <b>__main__</b> com isso utilizando o <b>if</b> é possível utilizar o mesmo código como biblioteca e programa.	
 	</p>
 
 	<p>
@@ -122,7 +122,9 @@ if __name__ == '__main__':
 
 	<p>
 		Por ser uma linguagem fortemente tipada, não é possível realizar operações matemáticas sem ocorrer erros entre tipos diferentes de dados, porém, python nos dá um funcionalidade bastante interessante, que é a multiplicação de string, a linha 12 por exemplo irá imprimir <b>==========</b>
-		Na linha 14 temos a função <b>getcwd</b> que retorna o diretório atual, é utilizado <b>os.getcwd()</b> pois essa função esta presente no módulo <b>os</b>.
 	</p>
 
+	<p>
+		Como é possível visualizar, o código em si é auto explicativo, sobre outros aspectos da linguagem navegue pelo site, caso não ache algum assunto que ache interessante, envie um e-mail para <i>vitor.ruts@gmail.com</i> 
+	</p>
 </article>
