@@ -39,10 +39,67 @@ h1, h2, h3, h4, h5 {
 
 header  {
   padding: 40px 0 100px;
-  background: rgb(43, 48, 51);  
+  background: rgb(62, 69, 73);  
   overflow: hidden;
   color: #FFF;
   position: relative;
+}
+
+
+/* ==========================================================================
+   Bottom and Footer styles
+   ========================================================================== */
+#bottom {
+  background: #3E4549;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+#bottom p {
+  color: #778489;
+}
+
+#bottom p a {
+  color: #b5c3c8;
+}
+
+
+#bottom p a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid #262a2c;
+  border-bottom: 1px solid rgba(97,102,104,0.85);
+}
+
+ul.social-icons {
+  list-style: none;
+  margin-left: 0px;
+}
+
+ul.social-icons li {
+  display: inline;
+  padding-right: 30px;
+  line-height: 0px;
+}
+
+ul.social-icons li a {
+  color: #778489;
+  text-decoration: none;
+  display: inline;
+}
+
+ul.social-icons li a:hover {
+  color: #38C8E0;
+  bottom: 12px;
+  text-decoration: none;
+  transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
 }
 
 header .limit {position: relative; overflow: hidden;}
@@ -373,3 +430,6 @@ hr {
   color: rgba(0,0,0,0.15);
   margin: 20px 0;
 }
+
+
+
