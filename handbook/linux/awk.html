@@ -16,10 +16,56 @@ title: Makefile
 	</p>
 
 	<p>
-		A função básica do AWK é percorrer linhas de um arquivo ou saída de um comando procurando por padrões, para cada padrão encontrado é possível tomar uma decisão e associar uma ação. Abaixo segue uma série de exemplos que  exemplificarão o uso da linguagem.
+		A função básica do AWK é percorrer linhas de um arquivo ou saída de um comando procurando por padrões, para cada padrão encontrado é possível tomar uma decisão e associar uma ação, sua estrutura básica pode ser definida como <code>awk [padrão / condição] [ação]</code>. Abaixo segue uma série de exemplos que  exemplificarão o uso da linguagem.
 	</p>
 
 	<h2>Exemplos de uso</h2>
 	<br>
+
+	<p>
+		Para exemplos mais básicos será utilizado os próprios arquivos do SO.
+	</p>
+	
+	<h4><u>Lendo arquivos</u></h4>
+
+	<p>
+		Utilização mais básica do comando, lê linha a linha do arquivo /etc/passwd
+	</p>
+
+<pre class="lang-bash prettyprint">
+awk '{print $0}' /etc/passwd
+...
+nobody:*:-2:-2:Unprivileged User:/var/empty:/usr/bin/false
+root:*:0:0:System Administrator:/var/root:/bin/sh
+daemon:*:1:1:System Services:/var/root:/usr/bin/false
+...				
+</pre>			
+
+	<p>
+		Lê linha a linha do arquivo /etc/passwd, porém especifica o delimitador de campo como sendo : através da sintaxe <b>-F :</b> e exibi o primeiro campo, um espaço e o quinto campo do arquivo.
+	</p>
+
+<pre class="lang-bash prettyprint">
+awk -F : '{print $1 "  " $5 }' /etc/passwd
+...
+nobody  Unprivileged User
+root  System Administrator
+daemon  System Services
+...				
+</pre>
+
+	<p>
+		Lê linha a linha do arquivo /etc/passwd, especifica o delimitador de campo como sendo <b>:</b>, exibe o primeiro e quinto campo das linhas cujo primeiro campo inicie a partir da letra "e".
+	</p>
+
+<pre class="lang-bash prettyprint">
+awk -F : '$1 > "e" { print $1 " " $5}' /etc/passwd
+...
+nobody Unprivileged User
+root System Administrator
+...				
+</pre>	
+
+	<h2 align="center">Em breve novos exemplos</h2>
 
 </article>
