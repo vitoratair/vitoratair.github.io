@@ -25,10 +25,41 @@ title: git
 
 	<h3>Noções básicas</h3>
 
+	<p>
+		A grande maioria dos controles de versão guardam as mudanças do código como alterações de um determinado arquivo. Ou seja, a cada mudança no arquivo, o sistema guarda apenas a mudança e não o arquivo inteiro, o <b>git</b> por outro lado trata tudo como <b>snapshots</b>, sempre que é realizado um commit, o <b>git</b> salva uma referência para um snapshot de como todos os arquivos alterados estão, para os arquivos que não foram modificados ele não cria um novo snapshot, apenas cria uma nova referência para o snapshot antigo.
+	</p>
 
+	<p>
+		Tudo no GIT possui um <b>checksum</b>, com isso nada pode ser alterado, criado ou deletado sem seu conhecimento, para o usuário isso significa que é impossível ter um arquivo corrompido ou mesmo perdido sem que o <b>git</b> fique sabendo, é utilizado um mecanismo de <b>hash SHA-1</b>, isso é, uma string de 40 caracteres compostas por caracteres hexadecimais para cálculo  de checksum
+	</p>
 
+	<h3>Arquivos no GIT</h3>
 
+	<p>
+		Os arquivos no <b>git</b> estão sempre em um dos três estados fundamentais:
+	</p>
+	
+	<ul>
+		<li><b>committed</b></li>
+			<p>
+				Arquivos committed são arquivos que já estão versionados e sem modificações pendentes na base local.
+			</p>
+		<li><b>modified</b></li>
+			<p>
+				Arquivos modified são arquivos que já estiveram no estado de committed e sofreram alguma alteração.
+			</p>
+		<li><b>staged</b></li>
+		<p>
+			Arquivos staged são arquivos que sofreram modificação "modified" e foram marcados para fazerem parte do próximo commit
+		</p>
+	</ul>
 
+	<h3>Projetos no GIT</h3>
+	<br>
 
+	<p>
+		
+	</p>
+		 
 
 </article>
