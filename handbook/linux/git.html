@@ -33,7 +33,11 @@ title: git
 		Tudo no GIT possui um <b>checksum</b>, com isso nada pode ser alterado, criado ou deletado sem seu conhecimento, para o usuário isso significa que é impossível ter um arquivo corrompido ou mesmo perdido sem que o <b>git</b> fique sabendo, é utilizado um mecanismo de <b>hash SHA-1</b>, isso é, uma string de 40 caracteres compostas por caracteres hexadecimais para cálculo  de checksum
 	</p>
 
-	<h3>Arquivos no GIT</h3>
+	<p align="center">
+		<img src="/assets/img/git1.png">
+	</p>
+
+	<h3>Estados do GIT</h3>
 
 	<p>
 		Os arquivos no <b>git</b> estão sempre em um dos três estados fundamentais:
@@ -54,12 +58,52 @@ title: git
 		</p>
 	</ul>
 
-	<h3>Projetos no GIT</h3>
+	<h3>Seções no GIT</h3>
 	<br>
+	
+	<p>
+		Basicamente o GIT é dividido em 3 grandes áreas de operações:
+	</p>
+
+	<ul>
+		<li><b>Git directory</b></li>
+			<p>
+				Local onde o <b>git</b>	armazena os metadados e o banco de dados do projeto, quando é feito um clone de um repositório, esse é o local que será clonado
+			</p>
+
+		<li><b>Working Directory</b></li>
+			<p>
+				Local de trabalho, onde os arquivos estão prontos para serem adicionados, editados ou removidos. Esses dados são obtidos através de uma base de dados comprimida do <b>Git directory</b>
+			</p>
+		<li><b>Stage Area</b></li>
+			<p>
+				Um único arquivo contendo as informações de arquivos que irão para o próximo commit, também chamado de <b>index</b>.
+			</p>
+		
+	</ul>
+
+	<p align="center">
+		<img src="/assets/img/git2.png">
+	</p>
+		
+	<p>
+		Pode-se resumir de forma prática o <b>workflow</b> do <b>git</b> como sendo:
+	</p>
+
+	<ul>
+		<li>Clonar o git directory para o working directory</li>
+		<li>Modificar arquivos no working directory</li>
+		<li>Selecionar e adicionar a eles snapshots para staging area</li>
+		<li>Realizar o commit, que levará os arquivos que estão na staging area para o git directory</li>
+	</ul>
+
+	<h3>Status de arquivos</h3>
 
 	<p>
-		
+		continua...
 	</p>
-		 
+
+
+
 
 </article>
