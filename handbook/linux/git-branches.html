@@ -1,0 +1,77 @@
+---
+layout: interna
+title: git
+---
+{% include submenu-linux.html %}
+
+<article class="content">
+
+	<h1 class="headline" align="center">Branches</h1>
+
+	<p>
+		O git incentiva a utilização de branches em seus projetos como forma de não "bagunçar" o seu branche master, branches no git são extremamente rápidos de se criar e sua alternância é tão rápida quanto. Enquanto que em outros CVS para se criar um novo branch é necessário a cópia de todos os fontes para um novo diretório, veremos a seguir que um branch no git nada mas é que um ponteiro que aponta para um determinado commit,  ficando simples e com um custo computacional irrisório cria-los e usa-los. 
+	</p>
+
+	<p>
+		Todo projeto git é criado com um branch principal chamado <b>master</b>, a figura abaixo mostra como funciona um projeto com apenas um branch.
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/branch1.png">
+	</p>	
+
+	<p>
+		Como vimos anteriormente, para cada commit o git cria um snapshot, e o ponteiro do branch master aponta para o último snapshot criado, quando criado um novo commit, o ponteiro irá se mover automaticamente. Quando criado um novo branch, é criado um novo ponteiro que irá apontar para o commit que você esta no momento.
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/branch2.png">
+	</p>	
+
+	<p>
+		Com isso temos um novo branch que esta apontando para mesmo commit, porém,  para saber em que branch realmente estamos, existe um ponteiro especial chamado <b>HEAD</b>, esse ponteiro irá apontar para o branch que estamos no momento. Quando trocamos de branch, o que o git faz é mover o ponteiro HEAD para o branch desejado de forma simples e rápida.
+	</p>
+
+<pre class="prettyprint">
+# Trocando de branch	
+$ git checkout testing
+</pre>
+	<p>
+		O comando acima move o ponteiro <b>HEAD</b> para o branch <b>testing</b>
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/branch3.png">
+	</p>	
+
+	<p>
+		Na prática isso significa que o seu branch master esta isolado do branch testing, você poderá avançar no seu branch testing deixando o branch master para trás.
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/branch4.png">
+	</p>	
+
+	<p>
+		Voltando para o branch master, o git irá mover novamente o ponteiro HEAD para o branch master e alterar seus arquivos para o snapshot referente ao commit <b>f30ab</b> ou seja o branch master. Qualquer alteração feita nesse branch não irá surtir efeito no branch testing, isso porque o git pegará caminhos diferentes nesse momento.
+	</p>
+
+<pre class="prettyprint">
+# Criando um arquivo	
+$ touch file.py
+$ git commit -a -m "arquivo adicionado"
+</pre>	
+
+	<p>
+		Com isso o git criou uma nova estrutura de commits que não irá se chocar com a estrutura do branch testing.
+	</p>
+
+	<p align="center">
+		<img src="/assets/img/branch5.png">
+	</p>
+
+	<p>
+		Isso resume de forma básica como o git gerencia os branches em seus projetos.
+	</p>
+
+</article>	
