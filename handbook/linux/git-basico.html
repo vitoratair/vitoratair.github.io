@@ -1,0 +1,200 @@
+---
+layout: interna
+title: git
+---
+{% include submenu-linux.html %}
+
+<article class="content">
+
+	<h1 class="headline" align="center">GIT</h1>
+
+	<h3>Comandos GIT</h3>
+
+	<p>
+		Abaixo será listado o uso básico do GIT, com criação de repositórios configurações iniciais e manipulações de arquivos para versionamento.
+	</p>
+
+	<dl>
+	    <dt>Criando repositório</dt>
+	    <dd>
+
+			<p>
+				Existe duas maneiras de se começar a utilizar um repositório git, a primeira delas é inicializar utilizando um projeto ou diretório existente em sua máquina.
+			</p>
+
+<pre class="lang-python prettyprint">
+$ git init
+</pre>
+
+			<p>
+				Com esse comando será criado um diretório <b>.git</b> que conterá os arquivos e objetos necessários para o funcionamento interno do git. Vale lembrar que nesse ponto nenhum arquivo esta sendo monitorado.
+			</p>
+				
+			<p>
+				A segunda maneira é clonar um diretório já existente. Essa é uma das grandes diferenças entre um sistema de controle de versão centralizado para um distribuído, clonando um repositório, o git terá todo o histórico de todos os arquivos, branches e tags, com isso caso aconteça um problema no servidor, qualquer cliente poderá enviar seu repositório e se tornar o servidor sem maiores problemas
+			</p>
+
+<pre class="lang-python prettyprint">
+$ git clone https://github.com/vitoratair/learning.git
+</pre>
+
+	    </dd>
+
+	    <dt>Configurações iniciais</dt>
+
+	    <dd>
+			<p>
+				É possível personalizar o git de forma que ele fique do jeito que cada usuário esta acostumado, todas essas configurações são armazenadas dentro do próprio diretório do projeto  <code>.git/config</code>. 
+			</p>
+
+			<p>
+				Abaixo será listado as configurações mais básicas necessárias para um projeto, note que quanto utilizado com a sintaxe <code>--global</code>, a configuração será válida para todos os repositórios git da máquina, quando não utilizado será apenas para o repositório em questão.
+			</p>
+
+<pre class="lang-python prettyprint">
+# Configura o nome e e-mail do programador para todos os repositórios git da máquina	
+$ git config --global user.name "Vitor Atair"
+$ git config --global user.email vitor.ruts@gmail.com
+</pre>
+	
+			<p>
+				Para ferramentas de merge e gerenciamento de conflitos, git aceita kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge e opendiff também é possível criar uma.
+			</p>
+
+<pre class="lang-python prettyprint">
+# Configura o nome a ferramenta de merge para todos os repositórios git da máquina	
+$ git config --global merge.tool vimdiff
+</pre>	
+
+			<p>
+				Para verificar as configurações presentes para o repositório é utilizado o comando abaixo.		
+			</p>
+
+<pre class="lang-python prettyprint">
+# Visualiza as configurações do repositório	
+$ git config --list
+</pre>
+	
+		<p>
+			Para deixar o git um pouco mais solidário com seus erros de digitação utilize a seguinte configuração
+		</p>
+
+<pre class="prettyprint">
+$ git config --global help.autocorrect 1	
+</pre>		
+		<p>
+			O comando acima fará com que o git corrija e execute o comando certo quando pequenos erros de digitação acontecerem, como exemplo <b>git lg</b> ou <b>git stats</b> serão executados, alguns erros de digitação o git não conseguirá interpretar e irá exibir uma mensagem de erro		</p>
+
+	    </dd>
+
+	    <dt>Help</dt>
+	    <dd>
+	    	<p>
+	    		Como todo software, uma das principais tarefas de quem quer aprende-lo é conhecer sua documentação. O git possui uma grande documentação pela própria linha de comando, ficando praticamente desnecessário utilizar alguma outra documentação, porém existe um grande número de bons materiais espalhados pela internet. Um bom resumo dos comandos git desenvolvidos pelo github em conjunto com o heroku pode ser encontrado nesse <a target="blank" href="https://na1.salesforce.com/help/pdfs/en/salesforce_git_developer_cheatsheet.pdf">link</a>
+	    	</p>
+
+<pre class="lang-python prettyprint">
+$ git --help
+$ man git
+</pre>	    	
+	    	<p>
+	    		Com os comandos acima se tem uma documentação geral do git e a lista de todos os possíveis comandos, para uma documentação mas especifica é necessário utilizar o comando específico, abaixo um exemplo.
+	    	</p>
+
+<pre class="prettyprint">
+# comando pode ser qualquer comando do git
+# Ex: git help add / git help init / git help stash
+$ git help [comando]
+$ man git [comando]
+</pre>	
+	    </dd>
+
+	    <dt>git add</dt>
+	    <dd>
+	    	<p>
+	    		O comando git add [file] serve para adicionar arquivos ao projeto.
+	    	</p>
+<pre class="prettyprint">
+$ git add README
+</pre>	    	
+			<p>
+				Para adicionar todos os arquivos ao projeto, é utilizado o comando <code>git add --all</code>
+			</p>
+	    </dd>
+
+	    <dt>git status</dt>
+	    <dd>
+	    	<p>
+	    		O comando <b>git status</b> exibe o status dos arquivos que estão sendo monitorados pelo git, e que possuem modificações comparado ao último commit.
+	    	</p>
+<pre class="prettyprint">
+$ git status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   README
+#	
+</pre>	    
+	    </dd>
+
+	    <dt>git diff</dt>
+	    <dd>
+	    	<p>
+	    		O comando <b>git diff</b> sem argumentos serve para comparar o que esta no <b>work directory</b> com o que esta na área de seleção "staging area"
+	    	</p>
+<pre class="prettyprint">
+$ git diff
+diff --git a/README b/README
+index e69de29..c1841fb 100644
+--- a/README
++++ b/README
+@@ -0,0 +1 @@
++README criado	
+</pre>	    	
+
+		<p>
+			É possível utilizar o diff especificando um único arquivo ou mesmo um commit bem anterior ao atual com a sintaxe.	
+		</p>	    
+<pre class="prettyprint">
+# Realiza o diff apenas em um arquivo
+$ git diff [file]
+
+# Realiza o diff em um commit anterior
+$ git diff d4d1dff8a6f7467b24c33f5d966c8bd1cb456821
+
+# Realiza o diff em um único arquivo de um commit anterior
+$ git diff d4d1dff8a6f7467b24c33f5d966c8bd1cb456821 [file]
+</pre>	    	
+	    </dd>
+
+
+	    <dt>git commit</dt>
+	    <dd>
+	    	<p>
+	    		O comando <b>git commit</b> serve para enviar os arquivos que estão na área de seleção, gravando as alterações para enviar ao <b>git directory</b>. Abaixo a sintaxe básica do comando.
+	    	</p>
+
+<pre class="prettyprint">
+# Commit de apenas um arquivo
+$ git commit file -m "Mensagem para o commit"
+
+# Commit de todos os arquivos
+$ git commit -a -m "Mensagem para o commit"
+</pre>
+	  
+		<p>
+			Caso aconteça de adicionar um arquivo no commit que não deveria, ou após commitar você encontrar um bug e não queira sujar o log, é possível continuar editando os arquivos necessários e utilizar a sintaxe <code>--amend</code>, com isso o git irá adicionar os novos arquivos no ultimo commit feito.
+		</p>
+
+<pre class="prettyprint">
+# Commit de apenas um arquivo
+$ git commit new_file --amend
+# Commit de todos os arquivos
+$ git commit -a --amend 
+	    </dd>	    
+
+</article>
