@@ -23,94 +23,23 @@ title: git
 		Desde seu nascimento em 2005, git evoluiu e vem evoluindo constantemente, é extremamente rápido e se tornou um dos SCVs mais populares da atualidade.
 	</p>
 
-	<h3>Noções básicas</h3>
-
-	<p>
-		A grande maioria dos controles de versão guardam as mudanças do código como alterações de um determinado arquivo. Ou seja, a cada mudança no arquivo, o sistema guarda apenas a mudança e não o arquivo inteiro, o <b>git</b> por outro lado trata tudo como <b>snapshots</b>, sempre que é realizado um commit, o <b>git</b> salva uma referência para um snapshot de como todos os arquivos alterados estão, para os arquivos que não foram modificados ele não cria um novo snapshot, apenas cria uma nova referência para o snapshot antigo.
-	</p>
-
-	<p>
-		Tudo no GIT possui um <b>checksum</b>, com isso nada pode ser alterado, criado ou deletado sem seu conhecimento, para o usuário isso significa que é impossível ter um arquivo corrompido ou mesmo perdido sem que o <b>git</b> fique sabendo, é utilizado um mecanismo de <b>hash SHA-1</b>, isso é, uma string de 40 caracteres compostas por caracteres hexadecimais para cálculo  de checksum
-	</p>
+	<h1 class="headline" align="center"></h1>
 
 	<p align="center">
-		<img src="/assets/img/git1.png">
+		<a class="btn-u" href="git1.html">workflow</a>	
 	</p>
-
-	<h3>Estados do GIT</h3>
-
-	<p>
-		Os arquivos no <b>git</b> estão sempre em um dos três estados fundamentais:
-	</p>
+	<p align="center">
+		<a class="btn-u" href="git2.html">Comandos básicos</a>
+	</p>		
 	
-	<ul>
-		<li><b>committed</b></li>
-			<p>
-				Arquivos committed são arquivos que já estão versionados e sem modificações pendentes na base local.
-			</p>
-		<li><b>modified</b></li>
-			<p>
-				Arquivos modified são arquivos que já estiveram no estado de committed e sofreram alguma alteração.
-			</p>
-		<li><b>staged</b></li>
-		<p>
-			Arquivos staged são arquivos que sofreram modificação "modified" e foram marcados para fazerem parte do próximo commit
-		</p>
-	</ul>
-
-	<h3>Seções no GIT</h3>
-	<br>
+	<p align="center">
+		<a class="btn-u" href="git3.html">Comandos Intermediários</a>
+	</p>		
 	
-	<p>
-		Basicamente o GIT é dividido em 3 grandes áreas de operações:
-	</p>
-
-	<ul>
-		<li><b>Git directory</b></li>
-			<p>
-				Local onde o <b>git</b>	armazena os metadados e o banco de dados do projeto, quando é feito um clone de um repositório, esse é o local que será clonado
-			</p>
-
-		<li><b>Working Directory</b></li>
-			<p>
-				Local de trabalho, onde os arquivos estão prontos para serem adicionados, editados ou removidos. Esses dados são obtidos através de uma base de dados comprimida do <b>Git directory</b>
-			</p>
-		<li><b>Stage Area</b></li>
-			<p>
-				Um único arquivo contendo as informações de arquivos que irão para o próximo commit, também chamado de <b>index</b>.
-			</p>
-		
-	</ul>
-
 	<p align="center">
-		<img src="/assets/img/git2.png">
-	</p>
-		
-	<p>
-		Pode-se resumir de forma prática o <b>workflow</b> do <b>git</b> como sendo:
-	</p>
-
-	<ul>
-		<li>Clonar o git directory para o working directory</li>
-		<li>Modificar arquivos no working directory</li>
-		<li>Selecionar e adicionar a eles snapshots para staging area</li>
-		<li>Realizar o commit, que levará os arquivos que estão na staging area para o git directory</li>
-	</ul>
-
-	<h3>Ciclo de vida de arquivos</h3>
-
-	<p>
-		Quando um repositório é clonado, todos os arquivos encontram-se no estado <b>monitorado</b> e <b>inalterados</b>, assim que você começa a alterar, criar e excluir arquivos eles irão estar em um dos quatro estados listados na figura abaixo.
-	</p>
-
-	<p align="center">
-		<img src="/assets/img/git3.png">
+		<a class="btn-u" href="git4.html">Comandos Avançados</a>				
 	</p>	
+	
 
-	<h3>Comandos GIT</h3>
-
-	<p>
-		Para aprender o básico dos comandos git, será utilizado como exemplo um projeto sendo iniciado, desde a iniciação do repositório percorrendo o caminho de criação de branches e tags, sincronização com o servidor e outros tópicos necessários para gerenciamento de um repositório. Esse material será criado em uma outra página, para acessa-lo utilize o <a href="git2.html">link</a>
-	</p>
 
 </article>
