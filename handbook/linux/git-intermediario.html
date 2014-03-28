@@ -8,12 +8,12 @@ title: git
 
 	<h1 class="headline" align="center">Comandos git</h1>
 
-</article>	
-<!-- 	    <dt>git checkout [<i>commit - branch - tag</i>] -- <i>[filename]</i></dt>
-	    <dd>
-	    	<p>
-				O comando <b>git checkout</b> 
-	    	</p>
+		<dl>
+		    <dt>git checkout</dt>
+		    <dd>
+		    	<p>
+					O comando <b>git checkout</b> serve para pegar uma versão anterior de um arquivo, branch ou tag.
+		    	</p>
 <pre class="prettyprint">
 # Clona o branch master com o nome de new_func
 $ git branch
@@ -22,10 +22,13 @@ $ git checkout -b new_func
 $ git branch
   master
 * new_func 
+
+# Descartar todas as modificações em seu working directory sem salvar os dados.
+$ git checkout -f
 </pre>	   
-		<p>
-			serve para pegar uma versão anterior de um arquivo, branch ou tag.
-		</p>
+			<p>
+				
+			</p>
 <pre class="prettyprint">
 # Retorna o arquivo filename no commit 316cf3089c8ef03bbcab8fc8886e14a4a6a6bbaa
 $ git checkout 316cf3089c8ef03bbcab8fc8886e14a4a6a6bbaa -- filename 
@@ -42,7 +45,114 @@ git checkout HEAD -- filename
 # Retorna o arquivo filename presente no commit anterior ao mais recente
 git checkout HEAD^ -- filename      
 </pre>
-	    </dd>
+		    </dd>
+
+		<dt>git branch</dt>		
+		<dd>
+			<p>
+				
+			</p>
+
+<pre class="prettyprint">
+# Lista os branches no repositório local
+$ git branch
+
+# Lista os branches no repositório remoto
+$ git branch -r
+
+# Lista os branches no repositório remoto e local
+$ git branch -a
+
+# Deleta um branch local
+$ git branch -d new_branch
+
+# Força a exclusão de um branch local
+$ git branch -D new_branch
+
+# Cria a partir do branch atual, um novo branch chamado new_branch
+$ git checkout -b new_branch
+
+# Cria no repositório remoto o branch new_branch, tendo como base o branch remote other_branch
+$ git checkout -b new_branch origin/other_branch
+
+# Cria um branch a partir de outro branch, tag ou commit
+$ git checkout -b new_branch v1.0
+
+# Retorna ao branch master
+$ git checkout master
+</pre>
+
+		</dd>	
+
+		<dt>git stash</dt>		
+		<dd>
+			<p>
+				O git não deixará você alternar entre branches sem fazer commit de modificações feitas, caso seja necessário alternar de branch e você não queire fazer o commit de suas modificações, o git tem um estado temporário chamado <b>stash</b>, o stash nada mais é que uma pilha onde o git salva as modificações que você queira <b>salvar e não commitar</b>, é possível visualizar os arquivos em stash e mais tarde commitar essas modificações se for necessário.
+			</p>
+
+<pre class="prettyprint">
+# Criando um stash
+$ git stash
+
+# Listando os stash disponíveis
+$ git stash list
+stash@{0}: WIP on master: 91feff3 add readme file
+</pre>			
+		
+		<p>
+			Salvando o stash, todos os arquivos serão salvos e o working directory estará limpo, ficando a tarefa de alternar entre branches possível. Abaixo exemplos para manipulação de stash.
+		</p>		
+
+<pre class="prettyprint">
+# Deletando as modificações do stash 0,
+# Caso não especificado um stash, o git irá deletar o último
+$ git stash drop stash@{0}
+
+# Commitar as alterações do stash
+$ git apply stash@{0}
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#
+#      modified:   readme
+
+
+# Criando um branch apartir de um stash
+$ git stash branch new_branch
+Switched to a new branch "new_branch"
+</pre>		
+
+		</dd>			
+
+		<dt>git tag</dt>		
+		<dd>
+			<p>
+				Tagging no git é muito utilizado para criar marcos de projetos, como versões por exemplo. Internamente um tag para o git é uma <b>label</b> para um commit.
+			</p>
+
+<pre class="prettyprint">
+# Criando um tag
+$ git tag -a v1.0.9 -m "Versão de produção"
+
+# Visualizando as tags criadas
+$ git tag
+v1.0.9
+
+# Enviando a tag v1.0.9 para o servidor
+$ git push origin v1.0.9
+
+# Enviando todas tags para o servidor
+$ git push --tags
+</pre>
+
+
+		</dd>	
+
 
 	</dl>
- -->
+
+
+</article>	
+
+
+
